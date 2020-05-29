@@ -6,13 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".ui.factory.FactoryFragment"
     android:orientation="vertical"
+    android:background="@drawable/signup"
     android:gravity="center">
+
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:errorEnabled="true"
         android:id="@+id/name"
         >
+
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
