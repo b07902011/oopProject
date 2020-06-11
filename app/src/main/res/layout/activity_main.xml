@@ -7,10 +7,11 @@
     tools:context=".MainActivity"
     android:orientation="vertical"
     android:background="@drawable/login"
-    android:gravity="center">
+    >
 
 
     <LinearLayout
+        android:layout_marginTop="300dp"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_width="match_parent"
@@ -21,16 +22,18 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Account"
-            android:textSize="25sp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+            android:gravity="center_vertical"
+            android:text="Account"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textSize="25sp" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:hint="Email"
+            android:hint="請輸入電子郵件"
             android:id="@+id/username"
             android:textSize="20sp"
             android:inputType="textEmailAddress"
@@ -44,51 +47,58 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="left">
+
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Password"
-            android:textSize="25sp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+            android:text="Password"
+            android:gravity="center_vertical"
+            android:textSize="23sp" />
+
         <EditText
-            android:layout_width="match_parent"
+            android:id="@+id/password"
+            android:layout_width="225dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:hint="請輸入密碼"
-            android:id="@+id/password"
-            android:textSize="20sp"
-            android:inputType="textPassword"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+            android:hint="請輸入密碼"
+            android:inputType="textPassword"
+            android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="81dp"
         android:gravity="center"
         android:orientation="horizontal">
 
         <Button
+            style="@android:style/Widget.DeviceDefault.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:background="@drawable/round_button"
+            android:background="@drawable/bg_round_button"
             android:onClick="login"
             android:text="登入"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textSize="25sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            style="@android:style/Widget.DeviceDefault.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:background="@drawable/round_button"
+            android:background="@drawable/bg_round_button"
             android:onClick="signup"
             android:text="註冊"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textSize="25sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

@@ -18,29 +18,33 @@
         >
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:hint = "工廠名稱"
+            android:layout_gravity="center_horizontal"
             android:textSize="20sp"
             />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         app:errorEnabled="true"
+        android:layout_gravity="center_horizontal"
         android:id="@+id/email"
         >
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint = "帳號"
+            android:layout_gravity="center_horizontal"
             android:textSize="20sp"
             android:inputType="textEmailAddress"
             />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         app:errorEnabled="true"
         android:id="@+id/password"
         >
@@ -59,9 +63,10 @@
         android:id="@+id/check"
         >
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:hint = "確認密碼"
+            android:layout_gravity="center_horizontal"
             android:textSize="20sp"
             android:inputType="textPassword"
             />
