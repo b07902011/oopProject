@@ -1,11 +1,11 @@
 [
   {
-    "name": "client_navigation",
+    "name": "factory_navigation",
     "navigationXmlIds": [],
     "deepLinks": []
   },
   {
-    "name": "factory_navigation",
+    "name": "client_navigation",
     "navigationXmlIds": [],
     "deepLinks": []
   },
