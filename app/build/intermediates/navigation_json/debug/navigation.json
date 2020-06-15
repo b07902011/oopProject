@@ -1,0 +1,17 @@
+[
+  {
+    "name": "factory_navigation",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
+    "name": "client_navigation",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  },
+  {
+    "name": "signup_navigation",
+    "navigationXmlIds": [],
+    "deepLinks": []
+  }
+]

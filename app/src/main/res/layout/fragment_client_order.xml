@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".ui.client_order.ClientOrderFragment"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:background="@drawable/order">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -67,10 +68,13 @@
             android:textSize="20sp"
             />
     </com.google.android.material.textfield.TextInputLayout>
+
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/order"
+        style="@android:style/Widget.DeviceDefault.Button.Borderless"
+        android:layout_width="98dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/round"
         android:text="下單"
-        android:background="@drawable/bg_round_button"
-        android:id="@+id/order"/>
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 </LinearLayout>
