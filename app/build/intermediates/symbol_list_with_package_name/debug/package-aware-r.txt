@@ -1576,6 +1576,7 @@ id chronometer
 id clear_text
 id client
 id clientRecycleView
+id client_header
 id clip_horizontal
 id clip_vertical
 id collapseActionView
@@ -1797,7 +1798,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
-id text_home
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter
@@ -1821,6 +1821,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id usermail
 id username
 id view_offset_helper
 id visible
