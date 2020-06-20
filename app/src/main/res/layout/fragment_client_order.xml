@@ -40,20 +40,42 @@
             android:textSize="20sp"
             android:id="@+id/material"/>
     </LinearLayout>
-    <com.google.android.material.textfield.TextInputLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:errorEnabled="true"
-        android:id="@+id/size"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp">
-        <com.google.android.material.textfield.TextInputEditText
+        android:orientation="horizontal"
+        android:gravity="center">
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint = "尺寸"
-            android:textSize="20sp"
-        />
-    </com.google.android.material.textfield.TextInputLayout>
+            app:errorEnabled="true"
+            android:id="@+id/length"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_weight="1">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint = "長"
+                android:textSize="20sp"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            android:id="@+id/width"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_weight="1">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint = "寬"
+                android:textSize="20sp"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

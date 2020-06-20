@@ -61,6 +61,7 @@ public class FirestoreHandler {
                                 order.other = orderData.get("備註").toString();
                                 order.id = document.getId();
                                 order.status = orderData.get("status").toString();
+                                order.price = orderData.get("price").toString();
                                 orderList.add(order);
                             }
                             Log.v(TAG, orderList.toString());
@@ -92,6 +93,7 @@ public class FirestoreHandler {
                                 order.size = orderData.get("尺寸").toString();
                                 order.other = orderData.get("備註").toString();
                                 order.id = document.getId();
+                                order.lowerprice = orderData.get("lowerprice").toString();
                                 orderList.add(order);
                             }
                             Log.v(TAG, orderList.toString());
@@ -168,6 +170,7 @@ public class FirestoreHandler {
                                 }
                                 t.setText("廠商: " + maxFactory);
                                 update("projectOrder", documentid, "status", maxFactory);
+                                update("projectOrder", documentid, "price", String.valueOf(max));
 
                             } else {
                                 Log.d(TAG, "No such document");

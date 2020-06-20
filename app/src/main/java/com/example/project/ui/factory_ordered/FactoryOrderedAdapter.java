@@ -35,10 +35,10 @@ public class FactoryOrderedAdapter extends RecyclerView.Adapter<FactoryOrderedAd
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         final Order order = mDataset.get(position);
-        holder.object.setText(order.object);
-        holder.size.setText(order.size);
-        holder.material.setText(order.material);
-        holder.other.setText(order.other);
+        holder.object.setText("項目: " + order.object);
+        holder.size.setText("尺寸: " + order.size);
+        holder.material.setText("材料: " + order.material);
+        holder.other.setText("備註: " + order.other);
         holder.client.setText("用戶: " + order.user);
     }
 

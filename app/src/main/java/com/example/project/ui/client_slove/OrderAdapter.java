@@ -64,10 +64,10 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
         // - replace the contents of the view with that element
         Log.v(TAG, "" + position);
         final Order order = mDataset.get(position);
-        holder.object.setText(order.object);
-        holder.size.setText(order.size);
-        holder.material.setText(order.material);
-        holder.other.setText(order.other);
+        holder.object.setText("項目: " + order.object);
+        holder.size.setText("尺寸: " + order.size);
+        holder.material.setText("材料: " + order.material);
+        holder.other.setText("備註: " + order.other);
         if(order.status.equals("ordering")) {
             holder.status.setText("未收單");
             holder.solve.setText("收單");
@@ -87,7 +87,10 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
             });
         }
         else{
-            holder.status.setText("廠商: " + order.status);
+            if(order.status != null && order.price != null)
+                holder.status.setText("廠商: " + order.status + " 出價: " + order.price);
+            else if(order.status != null)
+                holder.status.setText("廠商: " + order.status);
             holder.solve.setText("刪除訂單");
             holder.solve.setOnClickListener(new Button.OnClickListener(){
 

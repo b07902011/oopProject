@@ -39,6 +39,7 @@ public class FactoryOrderAdapter extends RecyclerView.Adapter<FactoryOrderAdapte
         public TextView other;
         public EditText price;
         public Button submit;
+        public TextView lowerprice;
         public MyViewHolder(View v) {
             super(v);
             object = (TextView) v.findViewById(R.id.object);
@@ -47,6 +48,7 @@ public class FactoryOrderAdapter extends RecyclerView.Adapter<FactoryOrderAdapte
             other = (TextView) v.findViewById(R.id.other);
             price = (EditText) v.findViewById(R.id.price);
             submit = (Button) v.findViewById(R.id.submit);
+            lowerprice = (TextView) v.findViewById(R.id.lowerprice);
         }
     }
 
@@ -68,15 +70,22 @@ public class FactoryOrderAdapter extends RecyclerView.Adapter<FactoryOrderAdapte
         // - replace the contents of the view with that element
         Log.v(TAG, "" + position);
         final Order order = mDataset.get(position);
-        holder.object.setText(order.object);
-        holder.size.setText(order.size);
-        holder.material.setText(order.material);
-        holder.other.setText(order.other);
+        holder.object.setText("項目: " + order.object);
+        holder.size.setText("尺寸: " + order.size);
+        holder.material.setText("材料: " + order.material);
+        holder.other.setText("備註: " + order.other);
+        holder.lowerprice.setText("最低出價: " + order.lowerprice);
         holder.submit.setOnClickListener(new Button.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-                if(!holder.price.getText().toString().equals("")){
+                if(holder.price.getText().toString().equals("")){
+                    holder.price.setError("此欄位不可為空");
+                }
+                else if(Integer.valueOf(holder.price.getText().toString()) < Integer.valueOf(order.lowerprice)){
+                    holder.price.setError("出價過低");
+                }
+                else {
                     FirestoreHandler.update("orderResult", order.id, mAuth.getCurrentUser().getDisplayName(), holder.price.getText().toString());
                     holder.price.setText("");
                 }
