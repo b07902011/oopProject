@@ -5,6 +5,7 @@
     android:layout_height="150dp"
     android:layout_margin="@dimen/activity_horizontal_margin"
     android:gravity="center"
+    android:background="@drawable/round"
     >
     <LinearLayout
         android:layout_width="wrap_content"
@@ -32,8 +33,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/status"/>
     </LinearLayout>
+
     <Button
+        android:id="@+id/solve"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/solve"/>
+        android:background="#FFFACD" />
 </LinearLayout>
