@@ -17,6 +17,7 @@ import com.example.project.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class FactoryOrderAdapter extends RecyclerView.Adapter<FactoryOrderAdapter.MyViewHolder> {
     private List<Order> mDataset;
@@ -63,6 +64,12 @@ public class FactoryOrderAdapter extends RecyclerView.Adapter<FactoryOrderAdapte
         return vh;
     }
 
+    public boolean isNumeric(String str){
+        Pattern pattern = Pattern.compile("^[-\\+]?[\\d]*$");
+        return pattern.matcher(str).matches();
+    }
+
+
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(final FactoryOrderAdapter.MyViewHolder holder, final int position) {
@@ -81,6 +88,9 @@ public class FactoryOrderAdapter extends RecyclerView.Adapter<FactoryOrderAdapte
             public void onClick(View v) {
                 if(holder.price.getText().toString().equals("")){
                     holder.price.setError("此欄位不可為空");
+                }
+                else if(!isNumeric(holder.price.getText().toString())){
+                    holder.price.setError("請填入整數");
                 }
                 else if(Integer.valueOf(holder.price.getText().toString()) < Integer.valueOf(order.lowerprice)){
                     holder.price.setError("出價過低");

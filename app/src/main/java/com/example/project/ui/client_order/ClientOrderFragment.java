@@ -22,6 +22,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 public class ClientOrderFragment extends Fragment {
 
@@ -69,6 +70,24 @@ public class ClientOrderFragment extends Fragment {
         }
     }
 
+    public boolean isNumeric(String str){
+        Pattern pattern = Pattern.compile("^[-\\+]?[\\d]*$");
+        return pattern.matcher(str).matches();
+    }
+
+    private boolean check(TextInputLayout textInputLayout){
+        if(textInputLayout.getEditText().getText().toString().equals("")){
+            textInputLayout.setError("此欄位不可為空");
+            return false;
+        }
+        else if(!isNumeric(textInputLayout.getEditText().getText().toString())) {
+            textInputLayout.setError("請填入整數");
+            return false;
+        }
+        else
+            return true;
+    }
+
     private void init(View root){
         length = (TextInputLayout)root.findViewById(R.id.length);
         widgth = (TextInputLayout)root.findViewById(R.id.width);
@@ -111,13 +130,10 @@ public class ClientOrderFragment extends Fragment {
                 Map<String, Object> order = new HashMap<>();
                 Map<String, Object> result = new HashMap<>();
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
-                if(length.getEditText().getText().toString().equals("") || widgth.getEditText().getText().toString().equals("")){
-                    if(length.getEditText().getText().toString().equals(""))
-                        length.setError("此欄位不可為空");
-                    if(widgth.getEditText().getText().toString().equals(""))
-                        widgth.setError("此欄位不可為空");
-                }
-                else {
+                boolean check = true;
+                check &= check(length);
+                check &= check(widgth);
+                if(check) {
                     order.put("項目", object.getSelectedItem().toString());
                     order.put("材料", material.getSelectedItem().toString().substring(0,2));
                     order.put("尺寸", length.getEditText().getText().toString() + " x " + widgth.getEditText().getText().toString());
