@@ -2,7 +2,6 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
-
     android:layout_width="match_parent"
     android:layout_height="150dp"
     android:layout_margin="@dimen/activity_horizontal_margin"
@@ -11,9 +10,10 @@
     >
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-
+        android:gravity="center"
+        android:layout_weight="1"
         android:layout_margin="@dimen/activity_horizontal_margin">
         <TextView
             android:layout_width="wrap_content"
@@ -36,15 +36,12 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_gravity="center">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+        android:layout_weight="1"
+        android:gravity="center_vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/lowerprice"/>
-        </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,7 +56,6 @@
                 android:hint="你的價錢"
                 android:id="@+id/price"
                 />
-
             <Button
                 android:id="@+id/submit"
                 style="@android:style/Widget.DeviceDefault.Button.Borderless"

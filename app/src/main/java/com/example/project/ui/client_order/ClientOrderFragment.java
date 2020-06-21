@@ -135,7 +135,7 @@ public class ClientOrderFragment extends Fragment {
                 check &= check(widgth);
                 if(check) {
                     order.put("項目", object.getSelectedItem().toString());
-                    order.put("材料", material.getSelectedItem().toString().substring(0,2));
+                    order.put("材料", material.getSelectedItem().toString().substring(0,material.getSelectedItem().toString().indexOf("(")));
                     order.put("尺寸", length.getEditText().getText().toString() + " x " + widgth.getEditText().getText().toString());
                     if(!other.getEditText().getText().toString().equals(""))
                         order.put("備註", other.getEditText().getText().toString());
